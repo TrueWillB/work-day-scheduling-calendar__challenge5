@@ -34,13 +34,11 @@ $(function () {
 
   setUpCurrentTimeDisplay();
   populateCalender();
-
 });
-
 
 // This is the click listener for the save buttons on the calendar
 allEvents.on("click", ".saveBtn", function (event) {
-  event.preventDefault();Your location
+  event.preventDefault();
   var thisTimeElement = $(this).parent(); //convenience variable
   var thisTimeNum = $(thisTimeElement).attr("data-hourNum");
   var eventTextToSave = thisTimeElement.find(".description").val(); //This saves the value typed within the calendar event into the variable calendarEvent. this.parent goes up from the clicked button to the parent div element, then .find(".description")
@@ -78,7 +76,7 @@ function saveEventToLocal(saveIndex, eventTextToSave) {
   localStorage.setItem("savedEvents", JSON.stringify(timeArray));
 }
 
-//This function takes the events saved into timeArray and actually plaves them into the calendar on display on the website
+//This function takes the events saved into timeArray and actually plaves them into the calendar on display on
 function populateCalender() {
   var eventToFill;
   for (i = 0; i < timeArray.length; i++) {
